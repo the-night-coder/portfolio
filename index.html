@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Night Coder — Developer Portfolio</title>
+<meta name="description" content="Portfolio of The Night Coder: software engineer who builds fast, thoughtful products after dark.">
+<meta name="theme-color" content="#07080f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="cursor" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav">
+  <a href="#top" class="logo" aria-label="Home"><span class="moon"></span>night<b>.coder</b></a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#skills">Stack</a>
+    <a href="#journey">Journey</a>
+    <a href="#contact">Contact</a>
+    <button id="palette-btn" class="kbd-btn" aria-label="Open command palette">⌘K</button>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow reveal">// hello, world — it's <span id="clock">00:00</span> somewhere</p>
+    <h1 class="glitch reveal" data-text="I build software after dark.">I build software<br>after dark.</h1>
+    <p class="lead reveal">Engineer, tinkerer and problem solver crafting fast, accessible and
+      delightful products. I write <span id="typed" class="typed"></span><span class="caret">|</span></p>
+    <div class="cta reveal">
+      <a href="#work" class="btn primary magnetic">See my work <span>→</span></a>
+      <a href="#contact" class="btn ghost magnetic">Say hello</a>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><i></i> scroll</div>
+  </section>
+
+  <!-- TERMINAL ABOUT -->
+  <section id="about" class="section">
+    <h2 class="title reveal"><span>01</span> About</h2>
+    <div class="about-grid">
+      <div class="terminal reveal" id="terminal" aria-label="Interactive terminal">
+        <div class="term-bar"><i></i><i></i><i></i><span>~/night-coder — zsh</span></div>
+        <div class="term-body" id="term-body"></div>
+        <form class="term-input" id="term-form">
+          <span>❯</span><input id="term-cmd" autocomplete="off" spellcheck="false" aria-label="Terminal command" placeholder="try: help">
+        </form>
+      </div>
+      <div class="about-text reveal">
+        <p>I'm a developer who does their best thinking when the world goes quiet. I care about
+          clean architecture, tiny details and interfaces that feel effortless.</p>
+        <p>From pixel-level front ends to resilient back-end services, I enjoy owning a product
+          end to end — and shipping it with polish.</p>
+        <div class="stats">
+          <div><b data-count="40">0</b><span>projects shipped</span></div>
+          <div><b data-count="5">0</b><span>years building</span></div>
+          <div><b data-count="1200">0</b><span>cups of coffee</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" class="section">
+    <h2 class="title reveal"><span>02</span> Selected work</h2>
+    <div class="filters reveal" role="tablist">
+      <button class="chip active" data-f="all">All</button>
+      <button class="chip" data-f="web">Web</button>
+      <button class="chip" data-f="tool">Tools</button>
+      <button class="chip" data-f="ai">AI</button>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2 class="title reveal"><span>03</span> Stack</h2>
+    <div class="orbit-wrap reveal">
+      <div class="orbit" id="orbit"><div class="core">&lt;/&gt;</div></div>
+      <ul class="skill-list" id="skill-list"></ul>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section id="journey" class="section">
+    <h2 class="title reveal"><span>04</span> Journey</h2>
+    <ol class="timeline">
+      <li class="reveal"><time>2025 — now</time><h3>Senior Software Engineer</h3><p>Leading product engineering, designing systems that scale and mentoring teammates.</p></li>
+      <li class="reveal"><time>2023 — 2025</time><h3>Full-Stack Engineer</h3><p>Shipped customer-facing features, cut load times by 60% and built a design system.</p></li>
+      <li class="reveal"><time>2021 — 2023</time><h3>Frontend Developer</h3><p>Turned designs into fast, accessible interfaces across several launches.</p></li>
+      <li class="reveal"><time>Always</time><h3>Open source &amp; side projects</h3><p>Late-night experiments that sometimes turn into real products.</p></li>
+    </ol>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <h2 class="title reveal"><span>05</span> Contact</h2>
+    <p class="big reveal">Have an idea that deserves to exist?<br><a href="mailto:itsmesreekanthkr@gmail.com" class="mail magnetic">itsmesreekanthkr@gmail.com</a></p>
+    <div class="socials reveal">
+      <a href="https://github.com/the-night-coder" target="_blank" rel="noopener" class="magnetic">GitHub</a>
+      <a href="mailto:itsmesreekanthkr@gmail.com" class="magnetic">Email</a>
+    </div>
+    <button id="copy" class="btn ghost reveal">Copy email</button>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> The Night Coder · Built by hand, under the moon. <button id="konami-hint" class="linkish" title="↑↑↓↓←→←→BA">psst…</button></footer>
+
+<!-- Command palette -->
+<div class="palette" id="palette" hidden>
+  <div class="pal-box" role="dialog" aria-label="Command palette">
+    <input id="pal-input" placeholder="Type a command or search…" aria-label="Search commands" autocomplete="off">
+    <ul id="pal-list"></ul>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
